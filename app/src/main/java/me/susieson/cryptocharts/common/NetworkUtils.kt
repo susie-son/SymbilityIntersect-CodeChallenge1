@@ -1,0 +1,16 @@
+package me.susieson.cryptocharts.common
+
+import android.content.Context
+import android.net.ConnectivityManager
+import android.net.NetworkInfo
+
+class NetworkUtils {
+
+    companion object {
+        fun isConnected(context: Context): Boolean {
+            val cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+            val activeNetwork: NetworkInfo? = cm.activeNetworkInfo
+            return activeNetwork?.isConnected == true
+        }
+    }
+}
